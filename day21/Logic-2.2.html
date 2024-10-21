@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Students with Marks Greater Than 60</h2>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+
+    <script>
+
+const students = [
+    { name: "John", marks: 75, subject: "Math", rollNumber: 12 },
+    { name: "Alice", marks: 45, subject: "Science", rollNumber: 18 },
+    { name: "Bob", marks: 62, subject: "English", rollNumber: 21 },
+    { name: "Charlie", marks: 55, subject: "History", rollNumber: 16 },
+    { name: "David", marks: 85, subject: "Math", rollNumber: 25 }
+];
+
+function displayHighScorers(students) {
+    const tableBody = document.querySelector("#studentTable tbody");
+
+    const highScorers = students.filter(student => student.marks > 60);
+
+    highScorers.forEach(student => {
+        const row = document.createElement("tr");
+
+        const rollCell = document.createElement("td");
+        rollCell.textContent = student.rollNumber;
+        row.appendChild(rollCell);
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = student.name;
+        row.appendChild(nameCell);
+
+        const subjectCell = document.createElement("td");
+        subjectCell.textContent = student.subject;
+        row.appendChild(subjectCell);
+
+        const marksCell = document.createElement("td");
+        marksCell.textContent = student.marks;
+        row.appendChild(marksCell);
+
+        tableBody.appendChild(row);
+    });
+}
+
+displayHighScorers(students);
+
+
+    </script>
+
+</body>
+</html>

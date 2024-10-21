@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+</html>
+<script>
+function SecretNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+}
+
+function checkGuess(secretNumber, guess) {
+    if (guess > secretNumber) {
+        return 'Your guess is too high!';
+    } else if (guess < secretNumber) {
+        return 'Your guess is too low!';
+    } else {
+        return 'Congratulations! You guessed the correct number!';
+    }
+}
+
+let secretNumber = SecretNumber();
+let playerGuess = prompt('Guess a number between 1 and 100:');
+
+playerGuess = parseInt(playerGuess, 10);
+
+let result = checkGuess(secretNumber, playerGuess);
+alert(result);
+
+</script>

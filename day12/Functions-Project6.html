@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if String Starts or Ends with "A"</title>
+    
+</head>
+<body>
+    <h1>Check if String Starts or Ends with "A"</h1>
+
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="checkString()">Check</button>
+
+    <p id="result"></p>
+</body>
+<script>
+
+function startsOrEndsWithA(str) {
+    
+    str = str.toUpperCase();
+
+    return str.startsWith('A') || str.endsWith('A');
+}
+
+function checkString() {
+    
+    let inputString = document.getElementById('inputString').value;
+
+    let result = startsOrEndsWithA(inputString);
+
+    if (result) {
+        document.getElementById('result').innerText = 'The string starts or ends with "A".';
+    } else {
+        document.getElementById('result').innerText = 'The string does not start or end with "A".';
+    }
+}
+
+
+</script>
+</html>

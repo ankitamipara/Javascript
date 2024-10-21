@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form action="./submit.html" onsubmit="return myForm()" id="myForm">
+        <h2>Register Form</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="hobby">Hobby:</label>
+        <input type="text" id="hobby" name="hobby">
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+
+
+</body>
+<script>
+
+function myForm(){
+
+    let name = document.getElementById('name').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let password = document.getElementById('password').value.trim();
+    let confirmPassword = document.getElementById('confirm_password').value.trim();
+    let dob = document.getElementById('dob').value.trim();
+    let hobby = document.getElementById('hobby').value.trim();
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    if (!name || !email || !password || !confirmPassword || !dob || !hobby || !gender) {
+        alert("All fields are required!");
+        return;
+    }
+
+    if (password.length < 8) {
+        alert("Password must be more than 8 characters.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    
+};
+
+
+</script>
+</html>

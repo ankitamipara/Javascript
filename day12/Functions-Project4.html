@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of a Square</title>
+    
+</head>
+<body>
+    <h1>Area of a Square</h1>
+
+    <input type="number" id="sideLength" placeholder="Enter side length">
+    <button onclick="displaySquareArea()">Calculate Area</button>
+
+    <p id="areaResult"></p>
+</body>
+<script>
+
+function calculateSquareArea(side) {
+    return side * side;
+}
+
+function displaySquareArea() {
+    
+    let sideLength = Number(document.getElementById('sideLength').value);
+
+    let area = calculateSquareArea(sideLength);
+
+    document.getElementById('areaResult').innerText = 'Area: ' + area;
+}
+
+
+
+</script>
+</html>

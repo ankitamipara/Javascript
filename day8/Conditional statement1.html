@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Question 1</h1>
+    <input type="number" placeholder="enter age" id="age">
+    <button onclick="ticketprice()">click here</button>
+    
+</body>
+</html>
+<script>
+    let age =0;
+    
+    function ticketprice(){
+
+        age = document.getElementById("age").value
+
+        if(age <= 12){
+            console.log("ticket price of 5")
+            alert("ticket price of 5")
+        }
+        else if(age <= 18){
+            console.log("ticet price of 10")
+            alert("ticket price of 10")
+        }
+        else if(age <= 60){
+            console.log("ticket price of 20")
+            alert("ticket price of 20")
+        }
+        else if(age >= 60){
+            console.log("ticket price of 15")
+            alert("ticket price of 15")
+        }
+    }
+
+
+</script>

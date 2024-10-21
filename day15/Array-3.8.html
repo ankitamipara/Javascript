@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Array of Strings</title>
+</head>
+<body>
+    <h1>Filtered and Uppercased Strings</h1>
+    <p id="result"></p>
+
+</body>
+<script>
+
+function processArray(arr) {
+    return arr
+        .filter(str => str.length >= 5)   
+        .map(str => str.toUpperCase());   
+}
+
+let strings = ['apple', 'bat', 'orange', 'kiwi', 'grape', 'pear'];
+
+let processedStrings = processArray(strings);
+
+document.getElementById("result").innerText = `Processed strings: ${processedStrings.join(', ')}`;
+
+
+</script>
+</html>

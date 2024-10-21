@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function classifyTriangle(angle1, angle2, angle3) {
+// Check if the sum of angles is 180 degrees
+if (angle1 + angle2 + angle3 !== 180) {
+    return "Not a triangle";
+}
+
+// Check if all angles are equal (Equilateral)
+if (angle1 === angle2 && angle2 === angle3) {
+    return "Equilateral";
+}
+
+// Check if exactly two angles are equal (Isosceles)
+if (angle1 === angle2 || angle2 === angle3 || angle1 === angle3) {
+    return "Isosceles";
+}
+
+// If none of the above, it's Scalene
+return "Scalene";
+}
+
+// Example usage
+console.log(classifyTriangle(60, 60, 60)); // Output: "Equilateral"
+console.log(classifyTriangle(70, 70, 40)); // Output: "Isosceles"
+console.log(classifyTriangle(50, 60, 70)); // Output: "Scalene"
+console.log(classifyTriangle(90, 45, 45)); // Output: "Isosceles"
+console.log(classifyTriangle(90, 90, 0));  // Output: "Not a triangle"
+
+</script>

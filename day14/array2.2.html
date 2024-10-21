@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2x2 Matrix Multiplication</title>
+</head>
+<body>
+
+<h1>2x2 Matrix Multiplication</h1>
+<p id="matrixDisplay"></p>
+
+<script>
+   
+    let matrix = [
+        [1, 2],
+        [3, 4]
+    ];
+
+    function displayMatrix(matrix, message) {
+        let matrixString = matrix.map(row => row.join(", ")).join("<br>");
+        document.getElementById("matrixDisplay").innerHTML += message + ":<br>" + matrixString + "<br><br>";
+    }
+
+    displayMatrix(matrix, "Original Matrix");
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            matrix[i][j] *= 2;
+        }
+    }
+
+    displayMatrix(matrix, "Updated Matrix (After Multiplication by 2)");
+
+</script>
+
+</body>
+</html>

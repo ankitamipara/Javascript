@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Characters from Array</title>
+</head>
+<body>
+
+    <h1>Pop Characters from Array</h1>
+    <button onclick="removeCharacters()">Remove Characters</button>
+    <p id="result"></p>
+
+    <script>
+        function removeCharacters() {
+            let characters = ['a', 'b', 'c', 'd', 'e'];  // Initial array of characters
+            let removedChars = [];
+
+            // Use a loop to remove elements using pop()
+            while (characters.length > 0) {
+                let poppedChar = characters.pop();  // Remove the last element
+                removedChars.push(poppedChar);  // Store removed characters for display
+            }
+
+            // Display the resulting array (should be empty) and removed characters
+            document.getElementById('result').textContent = 
+                "Array after popping: " + characters + " | Removed characters: " + removedChars;
+        }
+    </script>
+
+</body>
+</html>

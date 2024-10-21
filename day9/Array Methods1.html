@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push to Array</title>
+</head>
+<body>
+
+    <h1>Push Numbers to Array</h1>
+    <button onclick="addNumbers()">Add Numbers</button>
+    <p id="result"></p>
+
+    <script>
+        function addNumbers() {
+            let arr = [];  // Create an empty array
+            
+            // Use a loop to add numbers from 1 to 5
+            for (let i = 1; i <= 5; i++) {
+                arr.push(i);
+            }
+            
+            // Display the resulting array
+            document.getElementById('result').textContent = "Array: " + arr;
+        }
+    </script>
+
+</body>
+</html>

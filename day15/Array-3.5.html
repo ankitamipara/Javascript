@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length of Elements Greater Than 4</title>
+</head>
+<body>
+    <h1>Lengths of Elements Greater Than 4</h1>
+    <p id="lengthsResult"></p>
+
+</body>
+<script>
+
+let elements = ['apple', 'banana', 'kiwi', 'grape', 'orange'];
+
+let filteredElements = elements.filter(element => element.length > 4);
+
+let lengths = filteredElements.map(element => element.length);
+
+document.getElementById("lengthsResult").innerText = `Lengths of elements greater than 4 characters: ${lengths.join(', ')}`;
+
+
+</script>
+</html>

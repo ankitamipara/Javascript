@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Three Numbers</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Find the Sum of Three Numbers</h1>
+
+    <input type="number" id="number1" placeholder="Enter first number">
+    <input type="number" id="number2" placeholder="Enter second number">
+    <input type="number" id="number3" placeholder="Enter third number">
+    <button onclick="displaySum()">Calculate Sum</button>
+
+    <p id="result"></p>
+</body>
+<script>
+
+function sumOfThreeNumbers(num1, num2, num3) {
+    return num1 + num2 + num3;
+}
+
+function displaySum() {
+    
+    let number1 = Number(document.getElementById('number1').value);
+    let number2 = Number(document.getElementById('number2').value);
+    let number3 = Number(document.getElementById('number3').value);
+
+    let sum = sumOfThreeNumbers(number1, number2, number3);
+
+    document.getElementById('result').innerText = 'Sum: ' + sum;
+}
+
+
+</script>
+</html>

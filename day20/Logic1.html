@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Maximum Element in an Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Find Maximum Element</h2>
+    <label for="numbers">Enter numbers separated by commas:</label>
+    <input type="text" id="numbers" placeholder="e.g. 10, 20, 30, 40, 50">
+    <button onclick="findMax()">Find Maximum</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+
+function findMax() {
+    // Get the input from the text field
+    const input = document.getElementById('numbers').value.trim();
+    
+    // Check if input is not empty
+    if (input === '') {
+        document.getElementById('result').textContent = 'Please enter some numbers!';
+        return;
+    }
+    
+    // Split the input into an array of numbers
+    const numberArray = input.split(',').map(Number);
+
+    // Check if the input contains valid numbers
+    if (numberArray.some(isNaN)) {
+        document.getElementById('result').textContent = 'Please enter valid numbers separated by commas!';
+        return;
+    }
+
+    // Find the maximum value in the array
+    const max = Math.max(...numberArray);
+
+    // Display the result
+    document.getElementById('result').textContent = `The maximum number is: ${max}`;
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.nav{
+    height: 80px;
+}
+.col-lg-3{
+    border: 2px solid red;
+}
+.logo>a>img{
+    height: 45px;
+    margin-top: 10px;
+}
+.logo{
+    justify-content: end;
+    /* border: 2px solid red; */
+}
+.navtab{
+    border: 2px solid red;
+    justify-content: center;
+    gap: 50px;
+    font-size: 19px;
+    font-weight: 500;
+    align-items: center;
+}
+.navtab>a{
+    text-decoration: none;
+    color: black;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product of Digits</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Find Product of Digits</h1>
+
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="displayProductOfDigits()">Find Product</button>
+
+    <p id="result"></p>
+</body>
+<script>
+
+const productOfDigits = function(num) {
+    let product = 1;
+    num = Math.abs(num); 
+
+    while (num > 0) {
+        product *= num % 10;
+        num = Math.floor(num / 10); 
+    }
+
+    return product;
+};
+
+function displayProductOfDigits() {
+  
+    let inputNumber = Number(document.getElementById('inputNumber').value);
+
+    let product = productOfDigits(inputNumber);
+
+    document.getElementById('result').innerText = 'Product of Digits: ' + product;
+}
+
+
+</script>
+</html>

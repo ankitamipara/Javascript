@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #display{
+        height: 70vh;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        border: 1px solid red;
+        padding: 10px;
+    }
+    #div2{
+        height: 90px;border: 1px solid blue;
+        margin-top: 50px;
+        margin-left: 42px;
+    }
+    img{
+        width: 100%;border: 1px solid red;
+        height: 100%;
+        padding: 10px 10px 10px 10px;
+    }
+    p{
+        width: 100%;
+        text-align: center;
+        height: 2vh;
+        padding: 10px;
+    }
+    price{
+        /* border: 1px solid red; */
+       margin-left: 50%;
+        
+    }
+</style>
+<body>
+    <h1>API</h1>
+    <div id="display">
+
+    </div>
+</body>
+</html>
+<script> 
+
+fetch('https://fakestoreapi.com/products')
+   .then(function(res){
+    return res.json()
+   })
+   .then(function(res){
+    console.log(res)
+    displaydata(res)
+   })
+   .catch((err)=>console.log(err))
+
+   function displaydata(data){
+    let div = document.getElementById("display")
+
+    data.forEach((el,i)=>{
+        let div2 = document.createElement("div")
+
+        let p= document.createElement("p")
+        p.innerText=el.category
+
+        let price=document.createElement("price")
+        price.innerText=el.price
+
+        let description=document.createElement("description")
+        description.innerText=el
+
+        div2.id = "div2"
+        let img = document.createElement("img")
+        img.src=el.image
+
+        div2.append(img,p,price)
+        div.append(div2)
+    });
+   }
+    </script>

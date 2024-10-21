@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Repeated Elements in an Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Find Repeated Elements</h2>
+
+    <label for="arrayInput">Enter comma-separated numbers:</label>
+    <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5, 3, 2">
+
+    <button onclick="findRepeated()">Find Repeated Elements</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function findRepeated() {
+        // Get input value and convert it to an array
+        const input = document.getElementById('arrayInput').value;
+        const array = input.split(',').map(item => item.trim());
+
+        // Object to store frequency of each element
+        const frequency = {};
+        const repeated = [];
+
+        // Check frequency of each element
+        array.forEach(element => {
+            if (frequency[element]) {
+                frequency[element]++;
+                if (!repeated.includes(element)) {
+                    repeated.push(element);
+                }
+            } else {
+                frequency[element] = 1;
+            }
+        });
+
+        // Display repeated elements
+        const resultDiv = document.getElementById('result');
+        if (repeated.length > 0) {
+            resultDiv.innerHTML = 'Repeated elements: ' + repeated.join(', ');
+        } else {
+            resultDiv.innerHTML = 'No repeated elements found.';
+        }
+    }
+</script>
+
+</body>
+</html>

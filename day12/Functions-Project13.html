@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Status</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Dark Mode Status</h1>
+
+    <p id="status"></p>
+</body>
+<script>
+
+const darkMode = true; 
+
+const displayDarkModeStatus = () => {
+    const statusMessage = darkMode ? "ON" : "OFF";
+    document.getElementById('status').innerText = 'Dark Mode: ' + statusMessage;
+};
+
+displayDarkModeStatus();
+
+
+</script>
+</html>

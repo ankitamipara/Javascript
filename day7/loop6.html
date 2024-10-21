@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Example</title>
+</head>
+<body>
+
+    <h1>Hello World Printer</h1>
+    <button onclick="printHelloWorld()">Print Hello World 10 Times</button>
+    <div id="result"></div>
+
+    <script>
+        function printHelloWorld() {
+            let output = '';  // Initialize an empty string
+            for (let i = 0; i < 10; i++) {
+                output += 'Hello World<br>';  // Append "Hello World" followed by a line break
+            }
+            document.getElementById('result').innerHTML = output;  // Set the HTML content of the result div
+        }
+    </script>
+
+</body>
+</html>

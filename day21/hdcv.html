@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const students = [
+    { name: "John", marks: 75, subject: "Math", rollNumber: 12 },
+    { name: "Alice", marks: 45, subject: "Science", rollNumber: 18 },
+    { name: "Bob", marks: 62, subject: "English", rollNumber: 21 },
+    { name: "Charlie", marks: 55, subject: "History", rollNumber: 16 },
+    { name: "David", marks: 85, subject: "Math", rollNumber: 25 }
+];
+
+const filteredStudents = students.filter(student => student.marks > 60 && student.rollNumber > 15);
+
+console.log(filteredStudents);
+
+
+
+
+</script>
+</html>

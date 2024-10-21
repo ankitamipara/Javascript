@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+</html>
+
+<script>
+  function checkPassword(inputPassword, correctPassword) {
+        return inputPassword === correctPassword;
+}
+
+const correctPassword = "mysecretpassword";
+const inputPassword = prompt("Enter password:");
+
+if (checkPassword(inputPassword, correctPassword)) {
+  console.log("Password correct!");
+} 
+
+else {
+  console.log("Incorrect password.");
+}
+</script>

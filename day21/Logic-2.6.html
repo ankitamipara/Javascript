@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Marks</h2>
+    <table id="studentsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+                <th>Subject</th>
+                <th>Roll Number</th>
+            </tr>
+        </thead>
+        <tbody>
+       
+        </tbody>
+    </table>
+    <button id="updateMarksButton">Add 20 to Marks</button>
+</div>
+
+<script>
+
+const students = [
+    { name: "John", marks: 75, subject: "Math", rollNumber: 12 }, 
+    { name: "Alice", marks: 45, subject: "Science", rollNumber: 18 },
+    { name: "Bob", marks: 62, subject: "English", rollNumber: 21 }, 
+    { name: "Charlie", marks: 55, subject: "History", rollNumber: 16 }, 
+    { name: "David", marks: 85, subject: "Math", rollNumber: 25 }
+];
+
+function displayStudents() {
+    const tbody = document.querySelector('#studentsTable tbody');
+    tbody.innerHTML = '';
+
+    students.forEach(student => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${student.name}</td>
+            <td>${student.marks}</td>
+            <td>${student.subject}</td>
+            <td>${student.rollNumber}</td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+function updateMarks() {
+    students.forEach(student => {
+        student.marks += 20; 
+    });
+    displayStudents();
+}
+
+displayStudents();
+
+document.getElementById('updateMarksButton').addEventListener('click', updateMarks);
+
+
+
+</script>
+
+</body>
+</html>

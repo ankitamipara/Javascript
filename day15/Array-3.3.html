@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product of Array Elements</title>
+</head>
+<body>
+    <h1>Product of All Numbers</h1>
+    <p id="productResult"></p>
+
+</body>
+<script>
+
+let numbers = [1, 2, 'a', 4, 5, 'hello', 6];
+
+let filteredNumbers = numbers.filter(num => typeof num === 'number');
+
+let product = filteredNumbers.reduce((accumulator, currentValue) => accumulator * currentValue, 1);
+
+document.getElementById("productResult").innerText = `Product of all numbers: ${product}`;
+
+
+</script>
+</html>

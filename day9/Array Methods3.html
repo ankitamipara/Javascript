@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift from Array</title>
+</head>
+<body>
+
+    <h1>Shift Elements from Array</h1>
+    <button onclick="removeColors()">Remove Colors</button>
+    <p id="result"></p>
+
+    <script>
+        function removeColors() {
+            let colors = ['red', 'green', 'blue'];  // Initial array of colors
+            let removedColors = [];
+
+            // Use a loop to remove elements using shift()
+            while (colors.length > 0) {
+                let shifted = colors.shift();  // Remove the first element
+                removedColors.push(shifted);  // Store removed elements for display
+            }
+
+            // Display the resulting array (should be empty) and removed elements
+            document.getElementById('result').textContent = 
+                "Array after shifting: " + colors + " | Removed colors: " + removedColors;
+        }
+    </script>
+
+</body>
+</html>

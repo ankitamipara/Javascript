@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Array Manipulation</title>
+</head>
+<body>
+
+<h1>City Array Manipulation</h1>
+<p id="arrayDisplay"></p>
+
+<script>
+
+    let cities = ["New York", "Tokyo", "Paris"];
+    
+    function displayArray(message) {
+        document.getElementById("arrayDisplay").innerHTML += message + ": " + cities.join(", ") + "<br>";
+    }
+
+    displayArray("Initial array");
+
+    cities.shift();
+    displayArray("After removing the first city");
+
+    cities.unshift("London", "Berlin");
+    displayArray("After adding two cities to the beginning");
+
+</script>
+
+</body>
+</html>

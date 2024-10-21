@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Consonants in String</title>
+</head>
+<body>
+
+    <h1>Find Consonants in a String</h1>
+    <input type="text" id="inputString" placeholder="Enter a string" />
+    <button onclick="findConsonants()">Find Consonants</button>
+    <p id="result"></p>
+
+    <script>
+        function findConsonants() {
+            let str = document.getElementById('inputString').value;  // Get input string
+            let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];  // List of vowels
+            let consonants = [];
+
+            // Loop through the string and check for consonants
+            for (let i = 0; i < str.length; i++) {
+                let char = str[i];
+                // Check if the character is a letter and not a vowel
+                if (char.match(/[a-zA-Z]/) && !vowels.includes(char)) {
+                    consonants.push(char);
+                }
+            }
+
+            // Display the consonants found in the string
+            document.getElementById('result').textContent = 
+                "Consonants found: " + consonants.join(', ');
+        }
+    </script>
+
+</body>
+</html>

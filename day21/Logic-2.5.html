@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Marks Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Students with Marks Above 60</h2>
+    <ul id="studentList"></ul>
+</div>
+
+<script>
+    
+    const students = [
+        { name: "John", marks: 75, subject: "Math", rollNumber: 12 },
+        { name: "Alice", marks: 45, subject: "Science", rollNumber: 18 },
+        { name: "Bob", marks: 62, subject: "English", rollNumber: 21 },
+        { name: "Charlie", marks: 55, subject: "History", rollNumber: 16 },
+        { name: "David", marks: 85, subject: "Math", rollNumber: 25 }
+    ];
+
+    function displayTopStudents() {
+        const studentList = document.getElementById('studentList');
+        
+        studentList.innerHTML = '';
+
+        const filteredStudents = students.filter(student => student.marks > 60);
+
+        filteredStudents.forEach(student => {
+            const li = document.createElement('li');
+            li.textContent = student.name;  
+            studentList.appendChild(li);
+        });
+    }
+
+    displayTopStudents();
+</script>
+
+</body>
+</html>

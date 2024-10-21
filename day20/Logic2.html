@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Minimum Element</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Find Minimum Element in an Array</h2>
+
+    <label for="arrayInput">Enter numbers separated by commas:</label>
+    <input type="text" id="arrayInput" placeholder="Example: 5, 3, 8, 2, 1">
+
+    <button class="btn" onclick="findMin()">Find Minimum</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function findMin() {
+        const input = document.getElementById("arrayInput").value.trim();
+        if (!input) {
+            alert("Please enter some numbers!");
+            return;
+        }
+
+        // Split the input by commas and convert to an array of numbers
+        const arr = input.split(',').map(Number);
+
+        // Check if all inputs are valid numbers
+        if (arr.some(isNaN)) {
+            alert("Please enter valid numbers only!");
+            return;
+        }
+
+        // Find the minimum value using Math.min
+        const minValue = Math.min(...arr);
+
+        // Display the result
+        document.getElementById("result").innerText = "Minimum Value: " + minValue;
+    }
+</script>
+
+</body>
+</html>

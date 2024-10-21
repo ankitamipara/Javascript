@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop from Array</title>
+</head>
+<body>
+
+    <h1>Pop Elements from Array</h1>
+    <button onclick="removeElements()">Remove Elements</button>
+    <p id="result"></p>
+
+    <script>
+        function removeElements() {
+            let arr = [1, 2, 3, 4, 5];  // Initial array
+            let removedElements = [];
+
+            // Use a loop to remove elements using pop()
+            while (arr.length > 0) {
+                let popped = arr.pop();  // Remove the last element
+                removedElements.push(popped);  // Store removed elements for display
+            }
+
+            // Display the resulting array (should be empty) and removed elements
+            document.getElementById('result').textContent = 
+                "Array after popping: " + arr + " | Removed elements: " + removedElements;
+        }
+    </script>
+
+</body>
+</html>

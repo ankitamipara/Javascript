@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function power(base, exponent) {  
+    let result = 1;  
+    let count = 0;  
+    
+    do {  
+        result *= base;  
+        count++;  
+    } while (count < exponent);  
+    
+    return result;  
+}  
+
+let base = 2;  
+let exponent = 3;  
+console.log(power(base, exponent)); 
+</script>

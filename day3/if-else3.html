@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Comparison</h1>
+    <p>Enter the first number:</p>
+    <input type="number" id="firstNumber" placeholder="First number">
+    
+    <p>Enter the second number:</p>
+    <input type="number" id="secondNumber" placeholder="Second number">
+    
+    <br>
+    <button onclick="compareNumbers()">Compare Numbers</button>
+
+    <p id="message"></p>
+
+    <script>
+        function compareNumbers() {
+            
+            let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+            
+            let messageElement = document.getElementById('message');
+
+            if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                messageElement.textContent = "Please enter valid numbers in both fields.";
+            } else if (firstNumber > secondNumber) {
+                messageElement.textContent = "First number is greater.";
+            } else if (secondNumber > firstNumber) {
+                messageElement.textContent = "Second number is greater.";
+            } else {
+                messageElement.textContent = "Both numbers are equal.";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Odd Number</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Check if a Number is Odd</h1>
+
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="displayOdd()">Check Odd</button>
+
+    <p id="result"></p>
+</body>
+<script>
+
+const isOdd = (num) => num % 2 !== 0;
+
+function displayOdd() {
+    
+    let inputNumber = Number(document.getElementById('inputNumber').value);
+
+    let result = isOdd(inputNumber);
+
+    if (result) {
+        document.getElementById('result').innerText = inputNumber + ' is an odd number.';
+    } else {
+        document.getElementById('result').innerText = inputNumber + ' is not an odd number.';
+    }
+}
+
+
+</script>
+</html>

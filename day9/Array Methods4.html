@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unshift to Array</title>
+</head>
+<body>
+
+    <h1>Add Animals to Array</h1>
+    <button onclick="addAnimals()">Add Animals</button>
+    <p id="result"></p>
+
+    <script>
+        function addAnimals() {
+            let animals = ['lion', 'tiger', 'elephant'];  // Initial array of animals
+            
+            // Add 'giraffe' and 'zebra' to the beginning of the array using unshift()
+            animals.unshift('giraffe', 'zebra');
+            
+            // Display the modified array
+            document.getElementById('result').textContent = "Modified Array: " + animals;
+        }
+    </script>
+
+</body>
+</html>

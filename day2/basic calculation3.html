@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Calculator</title>
+</head>
+<body>
+    <h1>Speed Calculator</h1>
+    <button onclick="calculateSpeed()">Calculate Speed</button>
+</body>
+<script>
+    function calculateSpeed() {
+
+        const distance = parseFloat(prompt("Enter the distance travelledd n meters:"));
+        const time = parseFloat(prompt("Enter the time taken in seconds:"));
+
+        if (isNaN(distance) || isNaN(time) || distance < 0 || time <= 0) {
+            alert("Please enter valid positive numbers for distance and a positive number for time.");
+            return;
+        }
+
+        const speed = distance / time;
+
+        alert("The speed is " + speed.toFixed(2) + " m/s");
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="ladder" placeholder="check">
+    <button onclick="ladder()">click here</button>
+</body>
+</html>
+<script>
+    function ladder(){
+       let child = document.getElementById("ladder").value
+       let teen = document.getElementById("ladder").value
+       let adult = document.getElementById("ladder").value
+
+
+        if(child <= 10){
+            console.log("child")
+            alert("child")
+        }
+        else if (teen <= 20){
+            console.log("teen")
+            alert("teen")
+        }
+        else if (adult <= 30){
+            console.log("adult")
+            alert("adult")
+        }
+    }
+</script>

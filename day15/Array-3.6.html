@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Element in Array</title>
+</head>
+<body>
+    <h1>Check if Element is in Array</h1>
+
+    <p id="result"></p>
+
+</body>
+<script>
+
+let fruits = ['apple', 'banana', 'kiwi', 'grape', 'orange'];
+
+let elementToCheck = 'banana';
+
+let isPresent = fruits.includes(elementToCheck);
+
+if (isPresent) {
+    document.getElementById("result").innerText = `${elementToCheck} is present in the array.`;
+} else {
+    document.getElementById("result").innerText = `${elementToCheck} is not present in the array.`;
+}
+
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array String Pattern</title>
+</head>
+<body>
+    <h1>Strings with First or Last Character "a"</h1>
+    <p id="result"></p>
+
+</body>
+<script>
+
+function filterStringsByPattern(arr) {
+    return arr.filter(str => 
+        str.charAt(0) === 'a' || str.charAt(str.length - 1) === 'a'
+    );
+}
+
+let strings = ["assignment", "problem", "media", "upload"];
+
+let resultStrings = filterStringsByPattern(strings);
+
+document.getElementById("result").innerText = `Filtered strings: ${resultStrings.join(', ')}`;
+
+
+</script>
+</html>
