@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 20vh;
+            width: 90%;
+            background-color: #ececec;
+            /* border: 1px solid black; */
+            font-size: 2em;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 2em;
+        }
+        .count{
+            height: 8vh;
+            width: 10%;
+            background-color:  #9fd3c7;
+            /* border: 1px solid black; */
+            padding: 1.5em;
+        }
+        .count1{
+            height: 8vh;
+            width: 10%;
+            background-color:  #9fd3c7;
+            /* border: 1px solid black; */
+            padding: 1.5em;
+        }
+        #b1{
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: cadetblue;
+            color: wheat;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+        <h1 style="text-align: center;font-size: 60PX;font-weight: lighter;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="h">Countdown</h1>
+        <div class="main"><span style="margin-top: 50px;">Counter : </span>&nbsp;
+            <div id="count" class="count">
+               
+            </div>
+            
+            <div id="count1" class="count1">
+    
+            </div>
+            <div id="count2" class="count1">
+    
+            </div>
+            <div id="count3" class="count1">
+    
+            </div>
+            <div id="count4" class="count1">
+    
+            </div>
+            
+        </div>
+        <center>
+            <button id="b1" onclick="Start">Start</button>
+        <button id="b1">Stop</button>
+        <button id="b1">Reset</button>
+        </center>
+        <footer>
+            <p style="text-align: center;color: cornflowerblue;" id="p">our the counter</p>
+        </footer>
+
+       
+    <script>
+        let count = document.getElementById("count");
+        let time = 0;
+
+        let interval = setInterval(() => {
+            count.innerHTML = `timer: ${time}`
+            time++;  
+
+            if (time > 20 ) {   
+                clearInterval(interval);
+                count.innerHTML = "Time's up!";
+            }
+        }, 600);
+      
+
+        let count1 = document.getElementById("count1");
+        let time1 =  20;
+
+        let interval1=setInterval(()=>{
+            count1.innerHTML=`timer : ${time1}`;
+            time1--
+
+            if(time1<0){
+                clearInterval(interval1);
+                count.innerHTML = "Time's up!";
+            }
+        },400);
+
+        
+        let count2 = document.getElementById("count2");
+        let time2 =  30;
+
+        let interval2=setInterval(()=>{
+            count2.innerHTML=`timer : ${time2}`;
+            time2--;
+
+            if(time2<0){
+                clearInterval(interval2);
+                count.innerHTML = "Time's up!";
+            }
+        },200);
+
+        
+        let coun3 = document.getElementById("count3");
+        let time3 =  40;
+
+        let interval3=setInterval(()=>{
+            count3.innerHTML=`timer:${time3}`;
+            time3--;
+
+            if(time3<0){
+                clearInterval(interval3);
+                count.innerHTML = "Time's up!";
+            }
+        },100);
+
+         
+        let coun4 = document.getElementById("count4");
+        let time4 =  50;
+
+        let interval4=setInterval(()=>{
+            count4.innerHTML=`timer : ${time4}`;
+            time4--;
+
+            if(time4<0){
+                clearInterval(interval4);
+                count.innerHTML = "Time's up!";
+            }
+        },80);
+
+        setTimeout(()=>{
+            h.innerHTML="COUNTDOWN"
+        },1000)
+
+        setTimeout(() => {
+            p.innerHTML="OUR THE ALL COUNTER"
+        }, 1000);
+
+        function start() {
+          let count = 0
+          count++;
+        }
+    </script>
+</body>
+</html>

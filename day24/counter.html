@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 90%;
+            height: 80vh;
+            margin: 0 auto;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(pexels-njeromin-19400412.jpg);
+        }
+        .main{
+            height: 20vh;
+            width: 90%;
+            background-color: #ececec;
+            font-size: 2em;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 2em;
+            flex-wrap: wrap;
+            border-radius: 80px;
+            background-image: url(pexels-steve-29022334.jpg);
+        }
+        .count1{
+            height: 8vh;
+            width: 10%;
+            background-color: #b4c5e448;
+            padding: 1.5em;
+            margin-inline: 10px;
+            flex-wrap: wrap;
+            border-radius: 50px;
+        }
+        button{
+            margin-inline: 10px;
+            color: #fff;
+            font-size: 17px;
+            border: none;
+            border-radius: 10%;
+            padding: 20px 30px 20px 30px;
+            background-color: #1e2967;
+        }
+        #div2{
+            width: 50%;
+            height: 80px;
+            margin: 0 auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 60PX; font-weight: lighter; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="h">Countdown</h1>
+   
+    <div class="main"><span style="margin-top: 50px;">Counter: </span>&nbsp;
+
+        <div id="count" class="count1"></div>
+
+        <div id="count1" class="count1"></div>
+
+        <div id="count2" class="count1"></div>
+
+        <div id="count3" class="count1"></div>
+
+        <div id="count4" class="count1"></div>
+
+    </div>
+
+    <div id="div2"></div>
+    <footer>
+        <p style="text-align: center; color: rgb(5, 5, 5);font-size: 24px;font-weight: 900;" id="p">Our the counter</p>
+    </footer>
+
+    <script>
+        let count = document.getElementById("count");
+        let count1 = document.getElementById("count1");
+        let count2 = document.getElementById("count2");
+        let count3 = document.getElementById("count3");
+        let count4 = document.getElementById("count4");
+
+        let time = 0, time1 = 20, time2 = 30, time3 = 40, time4 = 50;
+        let interval, interval1, interval2, interval3, interval4;
+
+        function start() {
+            // Start all counters
+            interval = setInterval(() => {
+                count.innerHTML = `Timer: ${time}`;
+                time++;
+                if (time >= 20) {
+                    clearInterval(interval);
+                    count.innerHTML = "Time's up!";
+                }
+            }, 600);
+
+            interval1 = setInterval(() => {
+                count1.innerHTML = `Timer: ${time1}`;
+                time1--;
+                if (time1 < 0) {
+                    clearInterval(interval1);
+                    count1.innerHTML = "Time's up!";
+                }
+            }, 200);
+
+            interval2 = setInterval(() => {
+                count2.innerHTML = `Timer: ${time2}`;
+                time2--;
+                if (time2 < 0) {
+                    clearInterval(interval2);
+                    count2.innerHTML = "Time's up!";
+                }
+            }, 200);
+
+            interval3 = setInterval(() => {
+                count3.innerHTML = `Timer: ${time3}`;
+                time3--;
+                if (time3 < 0) {
+                    clearInterval(interval3);
+                    count3.innerHTML = "Time's up!";
+                }
+            }, 100);
+
+            interval4 = setInterval(() => {
+                count4.innerHTML = `Timer: ${time4}`;
+                time4--;
+                if (time4 < 0) {
+                    clearInterval(interval4);
+                    count4.innerHTML = "Time's up!";
+                }
+            }, 80);
+        }
+
+        function stop() {
+            // Stop all counters
+            clearInterval(interval);
+            clearInterval(interval1);
+            clearInterval(interval2);
+            clearInterval(interval3);
+            clearInterval(interval4);
+        }
+
+        function reset() {
+            // Reset all counters
+            stop(); 
+            
+            time = 0, time1 = 20, time2 = 30, time3 = 40, time4 = 50;
+            count.innerHTML =  `Timer: ${time}`;
+            count1.innerHTML = `Timer: ${time1}`;
+            count2.innerHTML = `Timer: ${time2}`;
+            count3.innerHTML = `Timer: ${time3}`;
+            count4.innerHTML = `Timer: ${time4}`;
+        }
+
+       
+        let divbtn = document.getElementById("div2");
+
+        let btn = document.createElement("button");
+        btn.innerHTML = "Start";
+        btn.id = "Startbtn";
+        btn.onclick = start; 
+        divbtn.append(btn);
+
+        let btn1 = document.createElement("button");
+        btn1.innerHTML = "Stop";
+        btn1.id = "Stopbtn";
+        btn1.onclick = stop; 
+        divbtn.append(btn1);
+
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "Reset";
+        btn2.id = "Resetbtn";
+        btn2.onclick = reset; 
+        divbtn.append(btn2);
+
+        setTimeout(() => {
+            document.getElementById("h").innerHTML = "COUNTDOWN";
+        }, 1000);
+
+        setTimeout(() => {
+            document.getElementById("p").innerHTML = "OUR THE ALL COUNTER";
+        }, 1000);
+    </script>
+</body>
+</html>
