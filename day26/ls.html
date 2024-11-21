@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    color: #f0a500;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+    transform: scale(1.1);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 8px 12px;
+    background-color: #f0a500;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #e08900;
+}
+
+#display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    border: none;
+    margin-top: 50px;
+    justify-content: center;
+    width: 100%;
+}
+
+#div2 {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#div2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+img {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+p, p2 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 18px;
+    margin-left: 5%;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+</style>
+</style>
+<body>
+    <h1>Welecome To Crt</h1>
+    <div id="data"></div>
+</body>
+</html>
+
+<script>
+    
+    function displayData(){
+
+
+
+let div = document.getElementById("data")
+
+div.innerHTML=""
+let users = JSON.parse(localStorage.getItem("cart"))||[]
+console.log(users)
+
+
+    users?.forEach(function(el,i){
+        let div2 = document.createElement("div");
+                div2.id = "div2";
+
+                let p = document.createElement("p");
+                p.innerText = el.category;
+
+                let p2 = document.createElement("p2");
+                p2.innerText = $$(el.price);
+
+                let img = document.createElement("img");
+                img.src = el.image;
+
+
+      
+
+        let delBtn = document.createElement("button")
+        delBtn.innerText="Delete"
+
+        delBtn.addEventListener("click",()=>{
+
+           deleteProduct(i)
+        })
+
+     
+
+        div2.append(img, p, p2,  delBtn);
+                div.append(div2);
+    })
+}
+
+displayData()
+
+function deleteProduct(index) {
+            let products = JSON.parse(localStorage.getItem('cart'));
+            products.splice(index, 1); // Remove product at index
+            localStorage.setItem('cart', JSON.stringify(products)); // Update localStorage
+            displayData(products); // Re-render the updated list
+        }
+</script>
